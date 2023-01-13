@@ -44,7 +44,7 @@ Overall, the script uses the Twitter API to get the top trending tweets, formats
 
 It should be noted that the script expects the existence of a "twitter_keys.json" file with the specified structure for the authentication keys.
 
-# twitter_keys.json
+### twitter_keys.json
 
 <pre>
     <code>
@@ -59,7 +59,7 @@ It should be noted that the script expects the existence of a "twitter_keys.json
 
 It also expects the existence of a css file for formatting the image.
 
-# styles.css
+### styles.css
 
 <pre>
     <code>
