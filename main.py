@@ -1,13 +1,18 @@
 from twitter_api import TwitterAPI
 from image_formatter import ImageFormatter
+import json
 
 
 def main():
     # Authenticate to the Twitter API using Tweepy
-    consumer_key = "lG4Lut1LmOFPthGBS8gfTLZyM"
-    consumer_secret = "qgbd01Evb02oZ40ADkRETTYFmt4KsawPQht0QBmmyNw9WBh7Ni"
-    access_token = "1443658109726216197-qYeWkQOTOslpj93K1NvTrwuuNHPjYE"
-    access_token_secret = "TnaZJODLg7ILyQzsiXwsTH2e9jZ1aNqRKg87JY9tUPdNp"
+    with open('twitter_keys.json', 'r') as f:
+        keys = json.load(f)
+
+    consumer_key = keys['consumer_key']
+    consumer_secret = keys['consumer_secret']
+    access_token = keys['access_token']
+    access_token_secret = keys['access_token_secret']
+
 
     # Create an instance of the TwitterAPI class
     twitter_api = TwitterAPI(
