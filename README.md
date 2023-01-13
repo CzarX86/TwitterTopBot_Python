@@ -10,26 +10,93 @@ These tweets are then formatted and rendered as an image using the PIL library. 
 
 The script authenticates to the Twitter API using the TwitterAPI class, which takes in four authentication keys (consumer key, consumer secret, access token, and access token secret) and uses them to authenticate with the API via the tweepy.OAuthHandler class. It then creates an instance of the tweepy.API class and assigns it to an instance variable self.api.
 
-The TwitterAPI class has two methods get_trending_tweets() which is used to get the top trending tweets and post_image(self, image_path: str) which is used to post the image to twitter by updating the status with the media file.
+- The TwitterAPI class:
 
-The main() function calls the get_trending_tweets() method and assigns the returned tweets to a variable tweets. It then formats the tweets into an image using the ImageFormatter class, creates the image, and posts it to twitter using the post_image method.
+  - `__init__`(self, consumer_key: str, consumer_secret: str, access_token: str, access_token_secret: str):
 
-The ImageFormatter class takes in a list of tweets and an image path and creates an image with the tweets written on it. It creates a new image with a specified size and background color and creates a Draw object to draw on the image. It defines the font and font size of the text to be written.
-The class has two methods create_image() which is used to create the image with the tweets and format_image(self, css_path: str) which is used to read the css file and get the font-family, font-size, and font-color.
+    - This method is used to authenticate to the Twitter API using the provided authentication keys.
+    - It creates an instance of the 'tweepy.OAuthHandler' class and sets the access token and secret.
+    - It also creates an instance of the 'tweepy.API' class and assigns it to an instance variable 'self.api'.
 
-The create_image() method writes the tweets on the image and saves the image to the specified path.
-The format_image(self, css_path: str) method reads the css file and updates the font object with the new font-family and font-size, and color.
-The script is using the wrap method from textwrap library to divide the text into lines with a maximum of 40 characters.
+  - 'get_trending_tweets(self) -> List[str]':
+    - This method is used to get the top trending tweets by searching for tweets with the query 'star wars' and in english language,
+    - it returns only the full_text of the top 3 tweets.
+  - post_image(self, image_path: str):
+    - This method is used to post the image to twitter by updating the status with the media file,
+    - it should be noted that this method is now deprecated, and you should use the media_upload method along with the update_status method for uploading media.
+  - main() function:
+    - calls the get_trending_tweets() method from TwitterAPI class and assigns the returned tweets to a variable tweets
+    - calls methods to format the tweets into an image using the ImageFormatter class, creates the image, and posts it to twitter using the post_image method.
 
-It should be noted that the script expects the existence of a "twitter_keys.json" file with the following structure:
-{
-"consumer_key": "YOUR_CONSUMER_KEY",
-"consumer_secret": "YOUR_CONSUMER_SECRET",
-"access_token": "YOUR_ACCESS_TOKEN",
-"access_token_secret": "YOUR_ACCESS_TOKEN_SECRET"
-}
+- The ImageFormatter class:
+
+  - `__init__`(self, tweets: List[str], image_path: str):
+    - This method takes in a list of tweets and an image path, it creates a new image with a specified size and background color and creates a Draw object to draw on the image.
+    - It also defines the font and font size of the text to be written.
+  - create_image(self):
+    - This method writes the tweets on the image and saves the image to the specified path.
+  - format_image(self, css_path: str):
+    - This method reads the css file and updates the font object with the new font-family, font-size, and font-color.
+    - However, this method is not implemented correctly and it has no effect on the final output of the image.
+  - The script is using the wrap method from the textwrap library to divide the text into lines with a maximum of 40 characters.
+
+Overall, the script uses the Twitter API to get the top trending tweets, formats them into an image, and posts the image to Twitter. However, there are some limitations and the implementation could be improved.
+
+It should be noted that the script expects the existence of a "twitter_keys.json" file with the specified structure for the authentication keys.
+
+# twitter_keys.json
+
+<pre>
+    <code>
+         {
+            "consumer_key": "lG4Lut1LmOFPthGBS8gfTLZyM",
+            "consumer_secret": "qgbd01Evb02oZ40ADkRETTYFmt4KsawPQht0QBmmyNw9WBh7Ni",
+            "access_token": "1443658109726216197-qYeWkQOTOslpj93K1NvTrwuuNHPjYE",
+            "access_token_secret": "TnaZJODLg7ILyQzsiXwsTH2e9jZ1aNqRKg87JY9tUPdNp"
+         } 
+      </code>
+</pre>
 
 It also expects the existence of a css file for formatting the image.
+
+# styles.css
+
+<pre>
+    <code>
+         /*
+         font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+         src: url('twitterchirp.ttf') format('truetype');
+         */
+
+         /* Set the font and font size */
+         @font-face {
+         font-family: PICOBLA, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+            Helvetica, Arial, sans-serif;
+         src: url('PICOBLA_.ttf') format('truetype');
+         font-size: 20px;
+         }
+
+         /* Set the color scheme to match Twitter */
+         body {
+         background-color: #1da1f2;
+         color: #fff;
+         }
+
+         /* Set the font for the tweets */
+         .tweet-text {
+         font-family: PICOBLA, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+            Helvetica, Arial, sans-serif;
+         font-size: 20px;
+         line-height: 1.5;
+         color: #fff;
+         }
+
+         /* Style the image */
+         img {
+         border: 2px solid #fff;
+         }
+      </code>
+</pre>
 
 Overall, the script uses the Twitter API to get the top trending tweets, formats them into an image, and posts the image to Twitter.
 
@@ -47,21 +114,20 @@ These instructions will get you a copy of the project up and running on your loc
 1. Clone the repository to your local machine
 2. Create a new application on your Twitter account at https://developer.twitter.com
 3. Generate the necessary API keys and access tokens
-4. Create a file called twitter_keys.json in the root directory and store your API keys and access tokens as follows:
-
+4. Create a file called twitter_keys.json in the root directory and store your API keys and access tokens as described above.
+5. Install the necessary libraries by running the following code in your terminal:
 <pre>
-    <code>
-      {
-         "consumer_key": "lG4Lut1LmOFPthGBS8gfTLZyM",
-         "consumer_secret": "qgbd01Evb02oZ40ADkRETTYFmt4KsawPQht0QBmmyNw9WBh7Ni",
-         "access_token": "1443658109726216197-qYeWkQOTOslpj93K1NvTrwuuNHPjYE",
-         "access_token_secret": "TnaZJODLg7ILyQzsiXwsTH2e9jZ1aNqRKg87JY9tUPdNp"
-      } 
-      </code>
+   <code>
+      pip install -r requirements.txt
+   </code>
 </pre>
 
-5. Install the necessary libraries by running pip install -r requirements.txt in your terminal
-6. Run the script with python main.py
+6. Run the script with:
+<pre>
+   <code>
+      python main.py
+   </code>
+</pre>
 
 ## Usage
 
