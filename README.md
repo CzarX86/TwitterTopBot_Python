@@ -37,7 +37,6 @@ The script authenticates to the Twitter API using the TwitterAPI class, which ta
     - This method writes the tweets on the image and saves the image to the specified path.
   - format_image(self, css_path: str):
     - This method reads the css file and updates the font object with the new font-family, font-size, and font-color.
-    - However, this method is not implemented correctly and it has no effect on the final output of the image.
   - The script is using the wrap method from the textwrap library to divide the text into lines with a maximum of 40 characters.
 
 Overall, the script uses the Twitter API to get the top trending tweets, formats them into an image, and posts the image to Twitter. However, there are some limitations and the implementation could be improved.

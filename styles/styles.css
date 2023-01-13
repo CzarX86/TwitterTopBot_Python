@@ -1,26 +1,23 @@
 /*
-  font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  src: url('twitterchirp.ttf') format('truetype');
+  
 */
 
 /* Set the font and font size */
 @font-face {
-  font-family: PICOBLA, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Helvetica, Arial, sans-serif;
-  src: url('PICOBLA_.ttf') format('truetype');
+  font-family: TwitterChirp;
+  src: url(/styles/PICOBLA_.TTF);
   font-size: 20px;
 }
 
 /* Set the color scheme to match Twitter */
 body {
+  font-family: TwitterChirp;
   background-color: #1da1f2;
   color: #fff;
 }
 
 /* Set the font for the tweets */
 .tweet-text {
-  font-family: PICOBLA, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Helvetica, Arial, sans-serif;
   font-size: 20px;
   line-height: 1.5;
   color: #fff;
@@ -29,23 +26,4 @@ body {
 /* Style the image */
 img {
   border: 2px solid #fff;
-}
-
-/* Position the tweets on the image */
-.tweet-1 {
-  position: absolute;
-  top: 60px;
-  left: 20px;
-}
-
-.tweet-2 {
-  position: absolute;
-  top: 160px;
-  left: 20px;
-}
-
-.tweet-3 {
-  position: absolute;
-  top: 260px;
-  left: 20px;
 }

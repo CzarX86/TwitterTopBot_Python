@@ -10,7 +10,7 @@ class TwitterAPI:
 
     def get_trending_tweets(self) -> List[str]:
         tweets = self.api.search_tweets(
-            q='star wars', lang='en', result_type='popular', tweet_mode='extended')
+            q='*', lang='en', result_type='popular', tweet_mode='extended')
         return [tweet.full_text for tweet in tweets[:3]]
 
     def post_image(self, image_path: str):

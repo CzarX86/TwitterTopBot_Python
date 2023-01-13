@@ -8,7 +8,7 @@ class ImageFormatter:
         self.tweets = tweets  # lista de tweets que serão escritos na imagem
         self.image_path = image_path  # caminho da imagem
         # cria uma nova imagem com tamanho 800x800 e cor de fundo
-        self.img = Image.new('RGB', (800, 800), color=(73, 109, 137))
+        self.img = Image.new('RGB', (800, 600), color=(73, 109, 137))
         # cria um objeto para desenhar na imagem
         self.d = ImageDraw.Draw(self.img)
         # define a fonte e tamanho do texto
@@ -32,19 +32,22 @@ class ImageFormatter:
 
     def format_image(self, css_path: str):
         with open(css_path, 'r') as css:
-            styles = css.read()  # pega o nome da fonte no arquivo CSS
+            styles = css.read()
             # Get the font-family from the CSS file
-            font_family = styles.split("font-family:")[1].split(";")[0].strip()
+            font_url = styles.split("src: url(/")[1].split(")")[0].strip()
             # Get the font-size from the CSS file
             font_size = int(styles.split("font-size:")
                             [1].split(";")[0].strip().replace("px", ""))
             # Get the font-color from the CSS file
             font_color = styles.split("color:")[1].split(";")[0].strip()
+            # print(font_url)
+            # print(font_size)
+            # print(font_color)
+
             # Update the font object with the new font-family and font-size
-            # self.font = ImageFont.truetype(font_size)
-            # self.font = ImageFont.truetype(font_family, font_size)
+            self.font = ImageFont.truetype(font_url, font_size)
+            self.d.textfont = self.font
+            self.d.fill = font_color
 
-            # salva a imagem com as novas formatações
+            # save imag
             self.img.save(self.image_path)
-
-
