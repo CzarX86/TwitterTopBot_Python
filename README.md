@@ -3,11 +3,14 @@
 ## Introduction
 This project is a Python script that utilizes the Tweepy library to access the Twitter API and retrieve popular tweets for a given search query. These tweets are then formatted and rendered as an image using the PIL library. The script also allows for custom styling of the text through a CSS file.
 
+## Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
 ## Requirements
-Python 3.x
-Tweepy library
-PIL library
-Textwrap library
+* Python 3.x
+* Tweepy library
+* PIL (Python Imaging Library)
+* Textwrap library
 
 ## Setup
 1. Clone the repository to your local machine
