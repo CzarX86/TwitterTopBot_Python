@@ -17,10 +17,10 @@ These instructions will get you a copy of the project up and running on your loc
 2. Create a new application on your Twitter account at developer.twitter.com
 3. Generate the necessary API keys and access tokens
 4. Create a file called config.py in the root directory and store your API keys and access tokens as follows:
-  ⋅⋅* consumer_key = 'YOUR_CONSUMER_KEY'
-  ⋅⋅* consumer_secret = 'YOUR_CONSUMER_SECRET'
-  ⋅⋅* access_token = 'YOUR_ACCESS_TOKEN'
-  ⋅⋅* access_token_secret = 'YOUR_ACCESS_TOKEN_SECRET'
+ * consumer_key = 'YOUR_CONSUMER_KEY'
+ * consumer_secret = 'YOUR_CONSUMER_SECRET'
+ * access_token = 'YOUR_ACCESS_TOKEN'
+ * access_token_secret = 'YOUR_ACCESS_TOKEN_SECRET'
 6. Install the necessary libraries by running pip install -r requirements.txt in your terminal
 7. Run the script with python main.py
 
