@@ -158,6 +158,7 @@ If you have any questions or suggestions, please feel free to contact me on Twit
 8. Add options for users to upload their own images to use as background images.
 9. Add ability for the user to change the background color of the image if they don't want to use a background image.
 10. Create a documentation for the AI background image generation functionality and update the Readme file.
+11. Add user interface. 🔥🔥🔥
 
 ## Transforming this project into a Python API and consuming it in a Firebase Node.js app:
 

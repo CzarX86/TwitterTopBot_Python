@@ -1,2 +1,4 @@
 twitter_keys.json
 *.pyc
+__pycache__/
+ponicode/
