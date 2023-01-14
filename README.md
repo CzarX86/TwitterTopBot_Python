@@ -162,11 +162,11 @@ If you have any questions or suggestions, please feel free to contact me on Twit
 
 ## Transforming this project into a Python API and consuming it in a Firebase Node.js app:
 
-1- Create a new Python web application using a web framework such as Flask or Django.
-2- Move existing code from the main script into the web application, and organize it into appropriate modules or classes.
-3- Create API endpoints in the web application to handle different API calls. For example, create an endpoint that returns top trending tweets and another endpoint that posts an image to Twitter.
-4- Test the API using a tool like Postman to make sure it's working correctly.
-5- Consume the API in the Firebase Node.js app using the http module or another package like request.
-6- Update Firebase data with the data returned from the API.
-7- Test the Firebase app to make sure it's consuming the data from the API correctly.
-8- Deploy the Python API on a hosting service like Heroku or AWS and update the Firebase app to point to the deployed API.
+1. Create a new Python web application using a web framework such as Flask or Django.
+2. Move existing code from the main script into the web application, and organize it into appropriate modules or classes.
+3. Create API endpoints in the web application to handle different API calls. For example, create an endpoint that returns top trending tweets and another endpoint that posts an image to Twitter.
+4. Test the API using a tool like Postman to make sure it's working correctly.
+5. Consume the API in the Firebase Node.js app using the http module or another package like request.
+6. Update Firebase data with the data returned from the API.
+7. Test the Firebase app to make sure it's consuming the data from the API correctly.
+8. Deploy the Python API on a hosting service like Heroku or AWS and update the Firebase app to point to the deployed API.
