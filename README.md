@@ -48,10 +48,10 @@ It should be noted that the script expects the existence of a "twitter_keys.json
 <pre>
     <code>
          {
-            "consumer_key": "lG4Lut1LmOFPthGBS8gfTLZyM",
-            "consumer_secret": "qgbd01Evb02oZ40ADkRETTYFmt4KsawPQht0QBmmyNw9WBh7Ni",
-            "access_token": "1443658109726216197-qYeWkQOTOslpj93K1NvTrwuuNHPjYE",
-            "access_token_secret": "TnaZJODLg7ILyQzsiXwsTH2e9jZ1aNqRKg87JY9tUPdNp"
+            "consumer_key": "place here",
+            "consumer_secret": "place here",
+            "access_token": "place here",
+            "access_token_secret": "place here"
          } 
       </code>
 </pre>
